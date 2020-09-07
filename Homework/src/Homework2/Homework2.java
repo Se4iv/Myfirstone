@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Homework2 {
     public static void main(String[] args){
-
+/*
 
         //first task
         System.out.println("Введите целое число: ");
@@ -158,6 +158,27 @@ public class Homework2 {
         for (int a=0;a< arr4.length; a++)
         {
             System.out.println(a +" = "+ arr4[a]);}
+*/
+        //tenth task version 2
+
+        int[] arr5 = new int[]{15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52};
+        for (int k=0;k< arr5.length; k++){
+            if(arr5[k]==0){
+                int count4 = 0;
+                for (int h=k+1;h< arr5.length; h++){
+                    int temp2=arr5[h];
+                    arr5[h]=arr5[k + count4];
+                    arr5[k + count4]=temp2;
+                    count4++;
+                }
+
+
+            }
+        }
+
+        for (int a=0;a< arr5.length; a++)
+        {
+            System.out.println(a +" = "+ arr5[a]);}
     }
     }
 
