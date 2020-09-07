@@ -129,29 +129,8 @@ public class Homework2 {
         }
 
 
-            //tenth task
-        int count3 = 0;
-        int[] arr4 = new int[]{15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52};
-        for (int k=0;k< arr4.length - count3; k++){
-            if(arr4[k]==0){
-                int temp2=arr4[arr4.length-1-count3];
-                if (temp2==0){
-                    count3++;
-                    temp2 = arr4[arr4.length-1-count3];
-                }
 
-                arr4[arr4.length-1-count3]=arr4[k];
-                arr4[k]=temp2;
-                count3++;
-
-            }
-        }
-
-        for (int a=0;a< arr4.length; a++)
-        {
-            System.out.println(a +" = "+ arr4[a]);}
-
-        //tenth task version 2
+        //tenth task
 
         int[] arr5 = new int[]{15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52};
         for (int k=0;k< arr5.length; k++){
