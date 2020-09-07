@@ -78,18 +78,11 @@ public class Homework2 {
         //seventh task
         System.out.println("Введите код города: ");
         int code = scanner.nextInt();
-        switch(code){
-            case(905):
-                System.out.println("Москва.Стоимость разговора: " + 10*4.15);
-                break;
-            case(194):
-                System.out.println("Ростов.Стоимость разговора: " + 10*1.98);
-                break;
-            case(491):
-                System.out.println("Краснодар.Стоимость разговора: " + 10*2.69);
-                break;
-            case(800):
-                System.out.println("Киров.Стоимость разговора: " + 10*5.00);
+        switch (code) {
+            case (905) -> System.out.println("Москва.Стоимость разговора: " + 10 * 4.15);
+            case (194) -> System.out.println("Ростов.Стоимость разговора: " + 10 * 1.98);
+            case (491) -> System.out.println("Краснодар.Стоимость разговора: " + 10 * 2.69);
+            case (800) -> System.out.println("Киров.Стоимость разговора: " + 10 * 5.00);
         }
 
         //eighth task
@@ -100,16 +93,16 @@ public class Homework2 {
         int sum5 = 0;
         int count2 = 0;
         Arrays.sort(arr2);
-        for(int i=0;i<arr2.length; i++){
-            if (arr2[i]>0){
-             sum3+=arr2[i];
-             count++;
+        for (int value : arr2) {
+            if (value > 0) {
+                sum3 += value;
+                count++;
             }
-            if(arr2[i]<0&&arr2[i]%2<0){
-                sum4+=arr2[i];
+            else if ( value % 2 < 0) {
+                sum4 += value;
             }
-            if (arr2[i]<0){
-                sum5+=arr2[i];
+            else if (value < 0) {
+                sum5 += value;
                 count2++;
             }
         }
