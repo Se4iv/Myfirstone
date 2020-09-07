@@ -38,9 +38,8 @@ public class Homework2 {
         else if (num4<0){
             num4-=2;
         }
-        else if (num4 ==0){
-            num4 = 10;
-        }
+        else num4 = 10;
+
 
         System.out.println("Новое число: " + num4);
 
@@ -63,7 +62,7 @@ public class Homework2 {
         if(num6 >0&&num6%2==0){
             System.out.println("Положительное четное число!");
         }
-        else if (num6>0&&num6%2>0){
+        else if (num6%2>0){
             System.out.println("Положительное нечетное число!");
         }
         else if (num6==0){
@@ -72,7 +71,7 @@ public class Homework2 {
         else if (num6<0&&num6%2==0){
             System.out.println("Отрицательное четное число!");
         }
-        else if (num6<0&&num6%2<0){
+        else if (num6%2<0){
             System.out.println("Отрицательное нечетное число!");
         }
 
