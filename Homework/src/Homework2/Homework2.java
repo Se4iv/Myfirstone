@@ -4,152 +4,167 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Homework2 {
-    public static void main(String[] args){
 
+    Scanner scanner = new Scanner(System.in);
+    public int num;
+    public int sum;
+    public int temp;
+    public int count;
+    public int[] arr;
+    public String descr;
+    public int duration;
+    public int sumpositive;
+    public int sumevennegative;
+    public int countpositive;
+    public int sumnegative;
+    public int countnegative;
 
-        //first task
+    //first task
+    public int lastNumber() {
         System.out.println("Введите целое число: ");
-        Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        System.out.println("Последняя цифра: " + num%10);
+        return num % 10;
+    }
 
-
-        //second task
+    //second task
+    public int sumNumbers() {
         System.out.println("Введите целое трехзначное число: ");
-        int num2 = scanner.nextInt();
-        int sum2 = num2%10 + (num2 - num2%10)/10%10 + (num2 - num2%100)/100;
-        System.out.println("Сумма цифра: " + sum2);
+        num = Math.abs(scanner.nextInt());
+        for (int i = 0; i < 3; i++) {
+            sum += num % 10;
+            num -= num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
 
-        //third task
+    //third task
+    public int checkNum() {
         System.out.println("Введите целое число: ");
-        int num3 = scanner.nextInt();
-        if(num3>0){
-            num3++;
+        num = scanner.nextInt();
+        if (num > 0) {
+            num++;
         }
+        return num;
+    }
 
-        System.out.println("Новое число: " + num3);
 
-        //forth task
+    //forth task
+    public int changeNum() {
         System.out.println("Введите целое число: ");
-        int num4 = scanner.nextInt();
-        if(num4>0){
-            num4++;
-        }
-        else if (num4<0){
-            num4-=2;
-        }
-        else num4 = 10;
+        num = scanner.nextInt();
+        if (num > 0) {
+            num++;
+        } else if (num < 0) {
+            num -= 2;
+        } else num = 10;
+        return num;
+    }
 
 
-        System.out.println("Новое число: " + num4);
-
-
-        //fifth task
+    //fifth task
+    public int leastNumber() {
         System.out.println("Введите три целых числа: ");
-        int[] arr= new int[3];
-        for (int i=0;i <3;i++){
+        arr = new int[3];
+        for (int i = 0; i < 3; i++) {
             arr[i] = scanner.nextInt();
         }
         Arrays.sort(arr);
+        return arr[0];
+    }
 
 
-        System.out.println("Наименьшее число : " + arr[0]);
-
-
-        //sixth task
+    //sixth task
+    public String descriptionNumber() {
         System.out.println("Введите целое число: ");
-            int num6 = scanner.nextInt();
-        if(num6 >0&&num6%2==0){
-            System.out.println("Положительное четное число!");
-        }
-        else if (num6%2>0){
-            System.out.println("Положительное нечетное число!");
-        }
-        else if (num6==0){
-            System.out.println("Нулевое число!");
-        }
-        else if (num6<0&&num6%2==0){
-            System.out.println("Отрицательное четное число!");
-        }
-        else if (num6%2<0){
-            System.out.println("Отрицательное нечетное число!");
-        }
+        num = scanner.nextInt();
+        if (num > 0) {
+            if (num % 2 > 0) {
+                descr = "Положительное нечетное число!";
+            } else descr = "Положительное четное число!";
+        } else if (num < 0) {
+            if (num % 2 < 0) {
+                descr = "Отрицательное нечетное число!";
+            } else descr = "Отрицательное четное число!";
+        } else descr = "Нулевое число!";
+        return descr;
+    }
 
-        //seventh task
+    //seventh task
+    public String talkCost() {
         System.out.println("Введите код города: ");
-        int code = scanner.nextInt();
-        switch (code) {
-            case (905) -> System.out.println("Москва.Стоимость разговора: " + 10 * 4.15);
-            case (194) -> System.out.println("Ростов.Стоимость разговора: " + 10 * 1.98);
-            case (491) -> System.out.println("Краснодар.Стоимость разговора: " + 10 * 2.69);
-            case (800) -> System.out.println("Киров.Стоимость разговора: " + 10 * 5.00);
+        num = scanner.nextInt();
+        duration = 10;
+        switch (num) {
+            case (905) -> descr = "Москва.Стоимость разговора: " + duration * 4.15;
+            case (194) -> descr = "Ростов.Стоимость разговора: " + duration * 1.98;
+            case (491) -> descr = "Краснодар.Стоимость разговора: " + duration * 2.69;
+            case (800) -> descr = "Киров.Стоимость разговора: " + duration * 5.00;
         }
+        return descr;
+    }
 
-        //eighth task
-        int[] arr2 = new int[]{1,-10,5,6,45,23,-45,-34,0,32,56,-1,2,-2};
-        int sum3 =0;
-        int sum4 = 0;
-        int count = 0;
-        int sum5 = 0;
-        int count2 = 0;
-        Arrays.sort(arr2);
-        for (int value : arr2) {
+    //eighth task
+    public String modifyArray() {
+        arr = new int[]{1, -10, 5, 6, 45, 23, -45, -34, 0, 32, 56, -1, 2, -2};
+        Arrays.sort(arr);
+        for (int value : arr) {
             if (value > 0) {
-                sum3 += value;
-                count++;
+                sumpositive += value;
+                countpositive++;
+            } else if (value % 2 == 0) {
+                sumevennegative += value;
+            } else if (value < 0) {
+                sumnegative += value;
+                countnegative++;
             }
-            else if ( value % 2 < 0) {
-                sum4 += value;
-            }
-            else if (value < 0) {
-                sum5 += value;
-                count2++;
-            }
+
         }
-        System.out.println("Максимальное число массива: " + arr2[arr2.length-1]);
-        System.out.println("Сумма положительных чисел: " + sum3);
-        System.out.println("Сумма четных отрицательных чисел: " + sum4);
-        System.out.println("Количество положительных чисел: " + count);
-        System.out.println("Среднее арифметическое отрицательных чисел: " + sum5/count2);
+        return descr = "Максимальное число массива: " + arr[arr.length - 1] + "\n"
+                + "Сумма положительных чисел: " + sumpositive + "\n"
+                + "Сумма четных отрицательных чисел: " + sumevennegative + "\n"
+                + "Количество положительных чисел: " + countpositive + "\n"
+                + "Среднее арифметическое отрицательных чисел: " + sumnegative / countnegative;
+
+    }
 
 
-        //ninth task
-        int[] arr3 = new int[]{15,10,51,-6,-5,3,-10,-34,0,32,56,-12,24,-52};
-        for (int j=0;j< arr3.length/2; j++){
-            int temp = arr3[arr3.length-1-j];
-            arr3[arr3.length-1-j]=arr3[j];
-            arr3[j]=temp;
-
-            
-        }
-
-        for (int a=0;a< arr3.length; a++)
-             {
-            System.out.println(a +" = "+ arr3[a]);
+    //ninth task
+    public String reverseArray() {
+        descr = "";
+        arr = new int[]{15, 10, 51, -6, -5, 3, -10, -34, 0, 32, 56, -12, 24, -52};
+        for (int j = 0; j < arr.length / 2; j++) {
+            temp = arr[arr.length - 1 - j];
+            arr[arr.length - 1 - j] = arr[j];
+            arr[j] = temp;
         }
 
+        for (int a = 0; a < arr.length; a++) {
+            descr += a + " = " + arr[a] + "\n";
+        }
+        return descr;
+    }
 
-
-        //tenth task
-
-        int[] arr5 = new int[]{15,10,0,-6,-5,3,0,-34,0,32,56,0,24,-52};
-        for (int k=0;k< arr5.length; k++){
-            if(arr5[k]==0){
-                int count4 = 0;
-                for (int h=k+1;h< arr5.length; h++){
-                    int temp2=arr5[h];
-                    arr5[h]=arr5[k + count4];
-                    arr5[k + count4]=temp2;
-                    count4++;
+    //tenth task
+    public String moveZeroArray() {
+        descr = "";
+        arr = new int[]{15, 10, 0, -6, -5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
+        for (int k = 0; k < arr.length; k++) {
+            if (arr[k] == 0) {
+                count = 0;
+                for (int h = k + 1; h < arr.length; h++) {
+                    temp = arr[h];
+                    arr[h] = arr[k + count];
+                    arr[k + count] = temp;
+                    count++;
                 }
-
-
             }
         }
+        for (int a = 0; a < arr.length; a++) {
+            descr += a + " = " + arr[a] + "\n";
+        }
+        return descr;
+    }
 
-        for (int a=0;a< arr5.length; a++)
-        {
-            System.out.println(a +" = "+ arr5[a]);}
-    }
-    }
+}
 
