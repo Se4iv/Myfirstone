@@ -1,12 +1,13 @@
-package Homework3;
+package Homework32;
+
+import Homework32.Animal;
 
 public class Dog extends Animal {
     private String furType;
 
-    public Dog(String furtype) {
+    public Dog(String food, String location, String furtype) {
+        super(food,location);
         this.furType = furtype;
-        super.location = "house";
-        super.food = "Pedigree";
     }
 
 

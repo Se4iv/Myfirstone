@@ -2,7 +2,6 @@ package Homework3;
 
 public class Main {
     public static void main(String[] args) {
-        //1
         Phone phone1 = new Phone();
         Phone phone2 = new Phone();
         Phone phone3 = new Phone();
@@ -19,21 +18,6 @@ public class Main {
                 90495839));
         System.out.println(phone1.sendMessage("230948", "2948903284", "0928340982"));
 
-        //2
-        Animal[] animals = new Animal[]{new Dog("hard"), new Horse("red"), new Cat("sharp")};
-        Veterinar vet = new Veterinar();
-        for (Animal x : animals) {
-            vet.treatAnimal(x);
-        }
-
-        //3
-        Student student = new Aspirant();
-        Student[] students = new Student[]{
-                new Student("John","Eksel","Best", 4),
-                new Aspirant("Ben","Hendriks", "Asps",5)};
-
-        for (Student s: students) {
-            System.out.println(s.getScholarship());
         }
     }
-}
+

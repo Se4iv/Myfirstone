@@ -1,10 +1,15 @@
-package Homework3;
+package Homework32;
 
 public class Animal {
-    protected String food;
-    protected String location;
+    private String food;
+    private String location;
 
-    public Animal() {
+    public String getFood() {
+        return food;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public Animal(String food, String location) {
