@@ -8,14 +8,15 @@ public class Dog extends Animal {
     public Dog(String food, String location, String furtype) {
         super(food,location);
         this.furType = furtype;
+        super.name ="Собака";
     }
 
 
-    public String makeNoise(String name) {
+    public String makeNoise() {
         return name + " рычит";
     }
 
-    public String eat(String name) {
+    public String eat() {
         return name + " чавкает";
     }
 }

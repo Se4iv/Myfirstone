@@ -3,6 +3,7 @@ package Homework32;
 public class Animal {
     private String food;
     private String location;
+    protected String name;
 
     public String getFood() {
         return food;
@@ -15,17 +16,18 @@ public class Animal {
     public Animal(String food, String location) {
         this.food = food;
         this.location = location;
+        this.name = "Животное";
     }
 
-    public String makeNoise(String name) {
+    public String makeNoise() {
         return name + " шумит";
     }
 
-    public String eat(String name) {
+    public String eat() {
         return name + " ест";
     }
 
-    public String sleep(String name) {
+    public String sleep() {
         return name + "  спит!";
     }
 }

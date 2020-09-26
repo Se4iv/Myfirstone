@@ -8,13 +8,14 @@ public class Cat extends Animal {
     public Cat(String food, String location, String clawtype) {
         super(food,location);
         this.clawType = clawtype;
+        super.name ="Кошка";
     }
 
-    public String makeNoise(String name) {
+    public String makeNoise() {
         return name + " шипит ";
     }
 
-    public String eat(String name) {
+    public String eat() {
         return name + " заглатывает";
     }
 }

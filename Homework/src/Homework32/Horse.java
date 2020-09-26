@@ -8,13 +8,14 @@ public class Horse extends Animal {
     public Horse(String food, String location,String colortype) {
         super(food,location);
         this.colorType = colortype;
+        super.name ="Лошадь";
     }
 
-    public String makeNoise(String name) {
+    public String makeNoise() {
         return name + " фыркает";
     }
 
-    public String eat(String name) {
+    public String eat() {
         return name + " перемалывает";
     }
 }
