@@ -1,7 +1,7 @@
 package Homework4;
 
 public class Circle implements Shape {
-    private double p = 3.14;
+    private double p = Math.PI;
     private double r;
 
     public Circle(double r){
